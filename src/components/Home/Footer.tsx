@@ -25,7 +25,7 @@ function Footer() {
           </div>
           <div>
             <p
-              className={`sm:w-[100%] md:w-[17vw] lg:w-[15vw] text-sm ${dosis.className}`}>
+              className={`w-[100%] md:w-[17vw] lg:w-[15vw] text-sm ${dosis.className}`}>
               We created our taxi to help you to find the most dependable and
               highest quality taxi services, anytime and anywhere without any
               problems.
@@ -37,7 +37,7 @@ function Footer() {
             <p>Useful Links</p>
           </div>
           <div
-            className={`flex items-center  gap-10 justify-between md:justify-start text-sm ${dosis.className}`}>
+            className={`flex items-center  md:gap-10 justify-between md:justify-start text-sm ${dosis.className}`}>
             <ul>
               <li className="flex items-center gap-2">
                 {" "}

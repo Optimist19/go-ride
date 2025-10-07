@@ -29,6 +29,8 @@ import {
 import { carClassInfo } from "../../../data";
 import Slide from "./Slide";
 import Image from "next/image";
+import FastAffordable from "./FastAffordable";
+import Taxi from "../3Dtaxi/Taxi";
 
 const dosis = Dosis({ subsets: ["latin"] });
 const raleway = Raleway({ subsets: ["latin"] });
@@ -178,7 +180,7 @@ function HomeComp() {
         className=""
         style={{
           backgroundImage:
-            "url('/jpeg/young-african-american-friends-sitting-inside-car.jpg')",
+            "url('/jpeg/young-african-american-friends-sitting-inside-carr.jpg')",
           backgroundBlendMode: "multiply",
           backgroundColor: "rgba(0, 0, 0, 0.5)",
           backgroundSize: "cover",
@@ -190,17 +192,7 @@ function HomeComp() {
 
         <FixedNavBar height={scrollY} />
         <div className="pt-[19vh] relative">
-          <div className="text-center">
-            <h1
-              className={`${dosis.className} text-[#ffba00] uppercase font-semibold`}>
-              Fast, Affordable, Secure!
-            </h1>
-
-            <h2
-              className={`${raleway.className} text-white text-[40px] md:text-[64px] font-extrabold capitalize`}>
-              Find your taxi
-            </h2>
-          </div>
+          <FastAffordable />
           <form
             onSubmit={handleSubmit(onSubmit)}
             className={`${raleway.className} flex flex-col items-center gap-4 pt-[4vh] `}>
@@ -221,7 +213,7 @@ function HomeComp() {
                 {/* toggleStartDestinationResultModal */}
                 {/* Suggestion list */}
                 {toggleStartDestinationResultModal && (
-                  <ul className="flex flex-col gap-2 absolute top-11 bottom-0 right-0 left-0 text-sm h-[20vh] overflow-y-scroll">
+                  <ul className="flex flex-col gap-2 absolute z-20 top-11 bottom-0 right-0 left-0 text-sm h-[20vh] overflow-y-scroll">
                     {Array.isArray(startDestinationResult) &&
                       startDestinationResult.map((obj, id) => (
                         <li
@@ -260,7 +252,7 @@ function HomeComp() {
                 {/* toggleEndDestinationResultModal */}
                 {/* Suggestion list */}
                 {toggleEndDestinationResultModal && (
-                  <ul className="flex flex-col gap-2 absolute top-11 bottom-0 right-0 left-0 text-sm h-[20vh] overflow-y-scroll">
+                  <ul className="flex flex-col gap-2 absolute z-20 top-11 bottom-0 right-0 left-0 text-sm h-[20vh] overflow-y-scroll">
                     {Array.isArray(endDestinationResult) &&
                       endDestinationResult.map((obj, id) => (
                         <li
@@ -398,7 +390,8 @@ function HomeComp() {
               </button>
             </div>
             {hoveredCarClass && carClassInfo[hoveredCarClass] && (
-              <div className="absolute bottom-[-30vh] transition-all duration-300 ease-out"
+              <div
+                className="absolute bottom-[-30vh] transition-all duration-300 ease-out"
                 style={{
                   transform: showModal ? "translateX(0)" : "translateX(-100%)",
                   opacity: showModal ? 1 : 0
@@ -441,6 +434,7 @@ function HomeComp() {
 
       <main>
         <WhatWeOffer />
+        <Taxi />
         <DownloadTheApp />
         <BenefitComp />
         <GetYourReward />

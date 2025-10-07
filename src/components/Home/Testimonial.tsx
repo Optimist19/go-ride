@@ -3,16 +3,15 @@ import { ImQuotesLeft } from "react-icons/im";
 import { testimonialData } from "../../../data";
 import { Dosis } from "next/font/google";
 import { Raleway } from "next/font/google";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { motion } from "framer-motion";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
 
 const dosis = Dosis({ subsets: ["latin"] });
 
 const raleway = Raleway({ subsets: ["latin"] });
-
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper/modules";
@@ -25,7 +24,12 @@ function Testimonial() {
   //     backgroundRepeat: "no-repeat"
   //   };
   return (
-    <div className="h-[100vh] flex justify-center items-center flex-col bg-blend-multiply bg-[rgba(0,0,0,0.6)] bg-[url('/jpeg/testimonial_bg.jpg')] bg-cover bg-center bg-no-repeat">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: false, amount: 0.5 }}
+      className="h-[100vh] flex justify-center items-center flex-col bg-blend-multiply bg-[rgba(0,0,0,0.6)] bg-[url('/jpeg/testimonial_bg.jpg')] bg-cover bg-center bg-no-repeat">
       <h4 className={`text-[#ffba00] ${raleway.className} uppercase`}>
         Client about us
       </h4>
@@ -60,7 +64,7 @@ function Testimonial() {
           })}
         </Swiper>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

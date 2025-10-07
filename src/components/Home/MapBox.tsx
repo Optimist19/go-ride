@@ -46,7 +46,6 @@ function MapBox() {
 
   return (
     <div>
-      <h2 className="">Map</h2>
       <div className="rounded-[1%]">
         <Map
           mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}

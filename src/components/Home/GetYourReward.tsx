@@ -1,16 +1,21 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Dosis } from "next/font/google";
 
 import { Raleway } from "next/font/google";
+import { motion } from "framer-motion";
 
 const raleway = Raleway({ subsets: ["latin"] });
 const dosis = Dosis({ subsets: ["latin"] });
 
 function GetYourReward() {
   return (
-    <div className="px-[4%] py-[10vh]">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: false, amount: 0.5 }}
+      className="px-[4%] py-[10vh]">
       <div className="md:flex bg-[#f8f8f8] ">
         <div>
           <Image
@@ -37,7 +42,7 @@ function GetYourReward() {
               time and money. Our main idea is based on establishing a direct
               connection between drivers and passengers.
             </p>
-             <div className="">
+            <div className="">
               <button
                 type="submit"
                 className={` ${raleway.className} submit-btn text-[#6d6d6d] bg-[#ffba00] py-4 px-[5vw] rounded-full font-bold cursor-pointer hover:text-white hover:transition-ease-in`}>
@@ -47,7 +52,7 @@ function GetYourReward() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

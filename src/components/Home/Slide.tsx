@@ -96,7 +96,7 @@ function Slide({ onClose }: SlideProps) {
             onClick={handleClose}
             className="absolute top-4 right-4 p-2 rounded-full hover:bg-black/10 transition-colors"
             aria-label="Close panel">
-            <X className="w-6 h-6" />
+            <X className="w-6 h-6 cursor-pointer" />
           </button>
           <MapBox />
           <div className="px-3">

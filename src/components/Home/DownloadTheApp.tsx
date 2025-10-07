@@ -2,8 +2,8 @@
 import Image from "next/image";
 import React from "react";
 import { Dosis } from "next/font/google";
-import { Raleway } from "next/font/google";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+
+import { motion } from "framer-motion";
 
 const dosis = Dosis({ subsets: ["latin"] });
 
@@ -20,7 +20,11 @@ function DownloadTheApp() {
         backgroundBlendMode: "multiply"
       }}>
       <div className="flex items-center justify-center flex-col ">
-        <div
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           style={{
             backgroundColor: "rgba(0, 0, 0, 0.5)",
             padding: "40px",
@@ -39,7 +43,7 @@ function DownloadTheApp() {
             how easy booking a taxi can be. With this application, you can order
             a taxi quickly.
           </p>
-          <div className="flex items-center gap-3">
+          <div className="ms:flex sm:items-center sm:gap-3">
             <Image
               src="/jpeg/google-play-badge-logo-svgrepo-com.svg"
               alt="Google Store"
@@ -55,9 +59,14 @@ function DownloadTheApp() {
               height={50}
             />
           </div>
-        </div>
+        </motion.div>
       </div>
-      <div className="absolute  right-[12vw] bottom-0 download-custom-css ">
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="absolute  right-[12vw] bottom-0 download-custom-css ">
         <Image
           src="/svg/getACab2.svg"
           alt="App Screenshot"
@@ -65,16 +74,21 @@ function DownloadTheApp() {
           height={300}
           className="hidden sm:hidden md:hidden lg:block"
         />
-      </div>
-        <div className="absolute  right-[4vw] bottom-0 download-custom-css div-phone-frame">
-          <Image
-            src="/svg/getACab2.svg"
-            alt="App Screenshot"
-            width={400}
-            height={300}
-            className="hidden sm:hidden md:block lg:hidden xl:hidden"
-          />
-        </div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="absolute  right-[4vw] bottom-0 download-custom-css div-phone-frame">
+        <Image
+          src="/svg/getACab2.svg"
+          alt="App Screenshot"
+          width={400}
+          height={300}
+          className="hidden sm:hidden md:block lg:hidden xl:hidden"
+        />
+      </motion.div>
     </div>
   );
 }
