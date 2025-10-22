@@ -10,9 +10,9 @@ const dosis = Dosis({ subsets: ["latin"] });
 function DownloadTheApp() {
   return (
     <div
-      className="sm:flex sm:flex-col sm:items-center sm:justify-center md:grid md:grid-cols-[60%_40%] relative"
+      className="flex flex-col items-center justify-center md:grid md:grid-cols-[60%_40%] relative px-4 sm:px-0"
       style={{
-        backgroundImage: "url('/jpeg/2149091990.jpg')",
+        backgroundImage: "url('/jpeg/favicon2.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "100vh",
@@ -35,10 +35,10 @@ function DownloadTheApp() {
             Download for free
           </h3>
           <h4
-            className={` text-[50px] font-extrabold ${dosis.className} text-white font-extrabold`}>
+            className={`text-[30px] md:text-[50px] font-extrabold ${dosis.className} text-white font-extrabold`}>
             Download the App
           </h4>
-          <p className={`${dosis.className} text-[14px] text-white w-[35vw]`}>
+          <p className={`${dosis.className} text-[14px] text-white md:w-[35vw]`}>
             Upload our own taxi application to your smartphone and discover just
             how easy booking a taxi can be. With this application, you can order
             a taxi quickly.
@@ -49,7 +49,7 @@ function DownloadTheApp() {
               alt="Google Store"
               width={150}
               height={50}
-              className="border border-black"
+              className=""
             />
 
             <Image
