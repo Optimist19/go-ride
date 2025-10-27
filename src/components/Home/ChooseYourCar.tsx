@@ -22,7 +22,7 @@ function ChooseYourCar() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: false, amount: 0.5 }}
-      className={`h-[100vh] ${raleway.className} flex justify-center items-center`}
+      className={`h-[100vh] ${raleway.className} flex justify-center items-center px-3.5`}
       style={backgroundPicture}>
       <div>
         <div className="flex justify-center flex-col items-center pb-3">
