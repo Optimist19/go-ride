@@ -69,6 +69,7 @@ function WhatWeOffer() {
           className={`capitalize font-extrabold md:text-[42px] ${raleway.className} text-[#343332] text-[32px] pb-[3vh]`}>
           Welcome to us
         </motion.h3>
+        
         <p
           className={`${dosis.className} text-[14px] text-[#6d6d6d] text-center`}>
           We created our taxi to help you to find the most dependable and
