@@ -5,7 +5,7 @@ import { Canvas } from "@react-three/fiber";
 
 function Taxi() {
   return (
-    <div className="min-h-[100dvh] bg-amber-300">
+    <div className="h-[100vh] bg-amber-300">
       <Canvas camera={{ position: [5, 2, 5], fov: 50 }} shadows>
         <Suspense
           fallback={
