@@ -51,7 +51,7 @@ const itemVariants = {
 
 function WhatWeOffer() {
   return (
-    <div className={` h-[100vh]`}>
+    <div className={` min-h-[100dvh] pb-6`}>
       <div className="flex items-center flex-col pt-[10vh] md:pt-[22vh]">
         <motion.h3
           initial={{ opacity: 0, y: 50 }}

@@ -74,7 +74,7 @@ function HowCanWeHelp() {
                 variants={itemVariants}
                 key={i}
                 className="flex flex-col items-center px-[4vw] cursor-pointer text-center">
-                <div className="h-[54px] md:w-[54px] bg-[#ffba00] flex items-center justify-center rounded-full">
+                <div className="h-[54px] w-[54px] bg-[#ffba00] flex items-center justify-center rounded-full">
                   <p className="text-white text-[30px] transition-transform duration-300 hover:scale-110">
                     {obj.icon}
                   </p>
