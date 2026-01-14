@@ -79,7 +79,7 @@ function Slide({ onClose }: SlideProps) {
   }
 
   return (
-    <div className={`${raleway.className} relative`}>
+    <div className={`${raleway.className} relative slide`}>
       <div
       // className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${
       //   isAnimating ? "opacity-100" : "opacity-0"
@@ -91,7 +91,7 @@ function Slide({ onClose }: SlideProps) {
         className={`h-screen bg-white w-full sm:w-[50%] fixed top-0 bottom-0 right-0 z-50 transition-transform duration-300 ease-in-out ${
           isAnimating ? "translate-x-0" : "translate-x-full"
         } `}>
-        <div className="p-6">
+        <div className="pad-all">
           <button
             onClick={handleClose}
             className="absolute top-4 right-4 p-2 rounded-full hover:bg-black/10 transition-colors"
@@ -99,7 +99,7 @@ function Slide({ onClose }: SlideProps) {
             <X className="w-6 h-6 cursor-pointer" />
           </button>
           <MapBox />
-          <div className="px-3">
+          <div className="px-3 slide-card">
             <Card className="absolute bottom-[2vh] right-0 left-0">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -156,7 +156,7 @@ function Slide({ onClose }: SlideProps) {
                 type="submit"
                 size="sm"
                 className="w-full bg-[#ffba00] text-[16px] font-semibold text-black hover:bg-[#ffba00] cursor-pointer">
-                {isBook ? "Booked" : "Confirm Booking"}
+                Confirm
               </Button>
             </Card>{" "}
           </div>
