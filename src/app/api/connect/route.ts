@@ -2,7 +2,6 @@ import { type NextRequest, NextResponse } from "next/server";
 
 const BASE_URL = "https://api.mapbox.com/directions/v5/mapbox/driving";
 
-
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const coordinates = searchParams.get("q");
@@ -23,12 +22,10 @@ export async function GET(request: NextRequest) {
     );
   }
 
-
-  const waypoints = `${coords[0]},${coords[1]};${coords[2]},${coords[3]}`
+  const waypoints = `${coords[0]},${coords[1]};${coords[2]},${coords[3]}`;
   // const waypoints = `${3.344477},${6.540031};${3.410761},${6.456197}`;
 
   const url = `${BASE_URL}/${waypoints}?alternatives=true&geometries=geojson&language=en&overview=full&steps=true&access_token=${process.env.MAPBOX_ACCESS_TOKEN}`;
-
 
   const res = await fetch(url, {
     method: "GET",
@@ -38,7 +35,6 @@ export async function GET(request: NextRequest) {
   });
 
   const coordResult = await res.json();
-
 
   return NextResponse.json({ data: coordResult });
 }
